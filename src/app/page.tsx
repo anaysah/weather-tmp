@@ -47,7 +47,7 @@ export default async function Temp() {
         <>
             <div className="flex gap-3 flex-col">
                 {data && <MapWithNoSSR position={data?.Position} />}
-                <div className="flex gap-3">
+                <div className="flex gap-3 flex-col md:flex-row">
                     {data && <FilterWeather hourly={data?.Hourly} />}
                     {data && <CurrentWeather current={data?.Current} />}
                 </div>
