@@ -37,7 +37,7 @@ const FilterWeather = ({ hourly }: { hourly: Hourly; }) => {
                 <span>Choose Date: </span>
                 <select value={selectedDate} onChange={(e) => setSelectedDate(e.target.value)} className='border rounded'>
                     {uniqueDates.map((value, index) => (
-                        <option key={index} value={value}>{value}</option>
+                        <option key={index} value={value.toString()}>{value}</option>
                     ))}
                 </select>
             </div>
