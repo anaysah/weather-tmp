@@ -1,5 +1,6 @@
 import CurrentWeather from "@/components/CurrentWeather";
 import FilterWeather from "@/components/FilterWeather";
+import Map from "@/components/Map";
 
 const API_URL = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m";
 
@@ -40,8 +41,11 @@ export default async function Temp() {
     return (
         <>
             <div className="flex gap-3 flex-col">
-                {data && <FilterWeather hourly={data?.Hourly} />}
-                {data && <CurrentWeather current={data?.Current} />}
+                {data && <Map position={data?.Position} />}
+                <div className="flex gap-3">
+                    {data && <FilterWeather hourly={data?.Hourly} />}
+                    {data && <CurrentWeather current={data?.Current} />}
+                </div>
             </div>
         </>
     )
